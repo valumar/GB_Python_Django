@@ -1,0 +1,28 @@
+{% extends "_base.html" %} 
+{% block title%} Образование {% endblock %} 
+{% block content %} 
+{% load static %}
+<h1>{{ name }}</h1>
+<div class="container-fluid">
+    {% for place in edu_places reversed %}
+    <div class="row">
+        <div class="col-md-3">
+            <p>
+                {{ place.years }}
+            </p>
+        </div>
+        <div class="col-md-3">
+            <p>
+                {{ place.place }}
+            </p>
+        </div>
+        <div class="col-md-6">
+            <p>
+                {{ place.position }}
+            </p>
+        </div>
+
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
