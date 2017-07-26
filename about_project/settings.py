@@ -25,7 +25,7 @@ SECRET_KEY = '9(@)1!e6i*y+n#=7yeq((n2=&0c0p5$9vt3y$kz8r^qfj95yre'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['secret-eyrie-68230.herokuapp.com']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -120,9 +120,9 @@ USE_TZ = True
 
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
+    os.path.join(BASE_DIR, "static/"),
     ]
 
 STATIC_URL = '/static/'
-STATIC_ROOT = 'static/'
-# STATIC_ROOT = os.path.join(BASE_DIR,'static/')
+# STATIC_ROOT = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR,'/static/')
