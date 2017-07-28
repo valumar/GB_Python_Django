@@ -1,8 +1,8 @@
 from datetime import date
 from django.shortcuts import render
+from .models import Work, Education
 
 
-# Create your views here.
 def main_view(request):
     name = 'Обо мне'
     about_dict = {
@@ -15,34 +15,14 @@ def main_view(request):
     }
     return render(request, 'index.html', {'nbar': 'home', 'name': name, 'about_dict': about_dict})
 
+
 def edu_view(request):
     name = 'Образование'
-    edu_list = [
-        {
-            'years': '1991-1994',
-            'place': 'Техасский университет в Остине',
-            'position': 'Студент',
-        },
-        {
-            'years': '1995-1996',
-            'place': 'Университет Гейдельберга в Германии',
-            'position': 'Кандидат наук',
-        },
-    ]
+    edu_list = Education.objects.all()
     return render(request, 'edu.html', {'nbar': 'edu', 'name': name, 'edu_places': edu_list})
+
 
 def work_view(request):
     name = 'Работа'
-    works_list = [
-        {
-            'years': '1996',
-            'place': 'Университет Гейдельберга в Германии',
-            'position': 'Приглашенный профессор',
-        },
-        {
-            'years': '1996-',
-            'place': 'Калифорнийский технологический институт',
-            'position': 'физик-теоретик',
-        },
-    ]
+    works_list = Work.objects.all()
     return render(request, 'work.html', {'nbar': 'work', 'name': name, 'work_places': works_list})
