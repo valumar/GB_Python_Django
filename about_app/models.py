@@ -6,3 +6,8 @@ class Work(models.Model):
     place = models.CharField(max_length=32)
     position = models.CharField(max_length=32)
 
+
+class Education(models.Model):
+    years = models.CharField(max_length=10)
+    place = models.CharField(max_length=32)
+    position = models.CharField(max_length=32)
