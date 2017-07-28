@@ -1,3 +1,8 @@
 from django.db import models
 
-# Create your models here.
+
+class Work(models.Model):
+    years = models.CharField(max_length=10)
+    place = models.CharField(max_length=32)
+    position = models.CharField(max_length=32)
+
