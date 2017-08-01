@@ -1,0 +1,35 @@
+{% extends "_base.html" %} 
+{% block title%}
+    {{ organization.name }}
+{% endblock %}
+{% block content %} 
+{% load static %}
+<h1>{{ organization.name }}</h1>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4">
+            <p>
+                Регион:
+            </p>
+        </div>
+        <div class="col-md-8">
+            <p>
+                {{ organization.region }}
+            </p>
+        </div>
+        </div>
+    <div class="row">
+        <div class="col-md-4">
+            <p>
+                Сайт:
+            </p>
+        </div>
+        <div class="col-md-8">
+            <p>
+                {{ organization.site }}
+            </p>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

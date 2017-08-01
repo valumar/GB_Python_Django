@@ -1,6 +1,6 @@
 from datetime import date
-from django.shortcuts import render
-from .models import Work, Education
+from django.shortcuts import render, get_object_or_404
+from .models import Work, Education, Organization
 
 
 def main_view(request):
@@ -26,3 +26,8 @@ def work_view(request):
     name = 'Работа'
     works_list = Work.objects.all()
     return render(request, 'work.html', {'nbar': 'work', 'name': name, 'work_places': works_list})
+
+
+def work_detail(request, pk):
+    organization = get_object_or_404(Organization, pk=pk)
+    return render(request, 'work_detail.html', {'organization': organization})

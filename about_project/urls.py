@@ -15,11 +15,12 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from about_app.views import main_view, edu_view, work_view
+from about_app.views import main_view, edu_view, work_view, work_detail
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', main_view),
-    url(r'^edu$', edu_view),
-    url(r'^work$', work_view),
+    url(r'^edu/$', edu_view),
+    url(r'^work/$', work_view),
+    url(r'^work/(?P<pk>[0-9]+)/$', work_detail, name='work_detail'),
 ]

@@ -15,7 +15,7 @@
         </div>
         <div class="col-md-3">
             <p>
-                {{ place.organization.name }}
+                <a href="{% url 'work_detail' pk=place.organization.pk %}">{{ place.organization.name }}</a>
             </p>
         </div>
         <div class="col-md-6">
