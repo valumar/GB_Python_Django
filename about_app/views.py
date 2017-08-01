@@ -28,6 +28,6 @@ def work_view(request):
     return render(request, 'work.html', {'nbar': 'work', 'name': name, 'work_places': works_list})
 
 
-def work_detail(request, pk):
-    organization = get_object_or_404(Organization, pk=pk)
+def work_detail(request, slug):
+    organization = get_object_or_404(Organization, slug=slug)
     return render(request, 'work_detail.html', {'organization': organization})

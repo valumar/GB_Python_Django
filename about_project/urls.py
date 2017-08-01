@@ -22,5 +22,6 @@ urlpatterns = [
     url(r'^$', main_view),
     url(r'^edu/$', edu_view),
     url(r'^work/$', work_view),
-    url(r'^work/(?P<pk>[0-9]+)/$', work_detail, name='work_detail'),
+    # url(r'^work/(?P<pk>[0-9]+)/$', work_detail, name='work_detail'),
+    url(r'^work/(?P<slug>[\w-]+)/$', work_detail, name='work_detail'),
 ]
