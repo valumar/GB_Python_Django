@@ -10,7 +10,6 @@ RUN pip install --install-option="--prefix=/install" -r /requirements.txt
 
 FROM base
 
-RUN mkdir /db
 COPY --from=builder /install /usr/local
 COPY src /app
 WORKDIR /app
