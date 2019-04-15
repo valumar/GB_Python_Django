@@ -13,4 +13,4 @@ FROM base
 COPY --from=builder /install /usr/local
 COPY src /app
 WORKDIR /app
-CMD ["gunicorn", "-w 3", "-b :8080", "about_project.wsgi"]
+ENTRYPOINT ["/bin/sh", "docker-entrypoint.sh"]
