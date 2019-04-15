@@ -1,5 +1,6 @@
 Django==1.11.20
-gunicorn==19.7.1
-pytz==2017.2
+gunicorn==19.9.0
+pytz==2019.1
+sqlparse==0.3.0
 Unidecode==0.4.21
 whitenoise==3.3.0
